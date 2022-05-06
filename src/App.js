@@ -16,17 +16,18 @@ function App() {
     }, []);
     return (
         <div className="App">
-            <h1>Summary</h1>
+            <div class="fixed-top top-header"><h1>Summary</h1></div>
+            <div class="bottom-part">
             <div className="tab">
                 <h3>Orders</h3>
-            <div className="box">
-                <Table striped bordered hover>
+            <div className="top-table">
+                <Table className="table table-striped table-bordered table-hover table-fixed ">
                     <thead>
                     <tr>
-                        <th>#</th>
-                        <th>Date</th>
-                        <th>Order Name</th>
-                        <th>Amount</th>
+                        <th class="col-md-2">#</th>
+                        <th class="col-md-3">Date</th>
+                        <th class="col-md-4">Order Name</th>
+                        <th class="col-md-3">Amount</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -34,10 +35,10 @@ function App() {
                         items.map((item, index) => {
                             return (
                                 <tr onClick={() => setItemData(item)}>
-                                    <td>{index + 1}</td>
-                                    <td>{item.date}</td>
-                                    <td>{item.name}</td>
-                                    <td>{item.amount}</td>
+                                    <td class="col-md-2">{index + 1}</td>
+                                    <td class="col-md-3">{item.date}</td>
+                                    <td class="col-md-4">{item.name}</td>
+                                    <td class="col-md-3">{item.amount}</td>
                                 </tr>
                             )
                         })
@@ -46,7 +47,7 @@ function App() {
                 </Table>
             </div>
             </div>
-            <div>
+            <div class="order-data">
                 <h3>Order Data</h3>
                 {
                     itemData !== {} &&
@@ -89,6 +90,7 @@ function App() {
 
                     </div>
                 }
+            </div>
             </div>
         </div>
     );
