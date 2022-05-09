@@ -35,7 +35,6 @@ function App() {
                 ev.stopPropagation();
                 var val = this.value;
                 event.target.innerHTML = val;
-                const par = event.target.parentNode;
                 const obj = items;
                 const closest = event.target.closest('div');
                 const fieldName = event.target.attributes['data-name'].value;
@@ -52,7 +51,7 @@ function App() {
             input.focus();
             input.onkeydown = function (e) {
                 e.stopPropagation();
-                if (e.keyCode == 13) {
+                if (e.keyCode === 13) {
                     input.blur();
                 }
             };
