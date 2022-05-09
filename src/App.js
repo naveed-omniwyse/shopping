@@ -2,12 +2,14 @@ import './App.css';
 import {Table} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {useEffect, useState} from "react";
-import orders from "./orders";
+// import orders from "./orders";
+import data from "./data.json";
 
 function App() {
     const [items, setItems] = useState([]);
     const [itemData, setItemData] = useState({});
     useEffect(() => {
+        const orders = JSON.parse(JSON.stringify(data));
         setItems(orders);
         window.localStorage.setItem('data', JSON.stringify(orders));
         if (orders.length > 0) {
@@ -28,7 +30,7 @@ function App() {
             const index = parseInt(par.childNodes[0].innerHTML) - 1;
             const updatedData = {name: par.childNodes[2].innerHTML, date: par.childNodes[1].innerHTML , amount: par.childNodes[3].innerHTML}
             obj[index] = {...obj[index], ...updatedData};
-            Object.assign(orders, obj);
+            Object.assign(data, obj);
             setItems(obj);
             setItemData(prev => {return {...prev, ...updatedData }});
         }
@@ -39,16 +41,6 @@ function App() {
             e.stopPropagation();
             if(e.keyCode == 13){
                 input.blur();
-                // var val=e.target.value;
-                // event.target.innerHTML=val;
-                // const par = event.target.parentNode;
-                // const obj = items;
-                // obj[parseInt(par.childNodes[0].innerHTML) - 1].name = par.childNodes[2].innerHTML;
-                // obj[parseInt(par.childNodes[0].innerHTML) - 1].date = par.childNodes[1].innerHTML;
-                // obj[parseInt(par.childNodes[0].innerHTML) - 1].amount = par.childNodes[3].innerHTML;
-                // Object.assign(orders, obj);
-                // setItems(obj);
-                // setItemData(prev => obj[parseInt(par.childNodes[0].innerHTML) - 1]);
             }
         };
     }
