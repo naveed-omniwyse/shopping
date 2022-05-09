@@ -1,3 +1,14 @@
+# Instructions:
+### 1. This is simple shopping cart page created with ReactJS
+### 2. It consists data populated from a JSON file. Page displays list of orders in a table. Upon clicking on the specific order, its details can be viewed below.
+### 3. It has an Editing feature, that can be enabled by clicking on 'Make Editable' button on top-right.
+### 4. This feature allows to edit OrderName, Amount, Item Name, Price and Quantity fields on 'Double Click'.
+### 5. At the end you can click 'Save Changes' button visible on top right at that time.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
