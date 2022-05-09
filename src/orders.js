@@ -1,229 +1,104 @@
 const orders = [
     {
-      name: "monday order",
+      name: "Monday order",
       amount: "$112",
       date: "03/05/2022",
       items: [
         {
-          itemName : "oranges",
+          itemName : "Oranges",
           quantity : 2,
+          price : "$2",
+          total : "$4"
+        },
+        {
+          itemName : "Apples",
+          quantity : 3,
+          price : "$2",
+          total : "$4"
+        }, {
+          itemName : "Bananas",
+          quantity : 3,
           price : "$2",
           total : "$4"
         }
       ]
     },
   {
-    name: "tuesdays order",
+    name: "Tuesdays order",
     amount: "$112",
-    date: "03/05/2022",
+    date: "04/05/2022",
     items: [
       {
-        itemName : "oranges",
+        itemName : "Oranges",
         quantity : 2,
+        price : "$2",
+        total : "$4"
+      },
+      {
+        itemName : "Apples",
+        quantity : 3,
+        price : "$2",
+        total : "$4"
+      }, {
+        itemName : "Bananas",
+        quantity : 3,
         price : "$2",
         total : "$4"
       }
     ]
   },
   {
-    name: "wednesdays order",
+    name: "Wednesdays order",
     amount: "$112",
-    date: "03/05/2022",
+    date: "05/05/2022",
     items: [
       {
-        itemName : "oranges",
+        itemName : "Oranges",
         quantity : 2,
+        price : "$2",
+        total : "$4"
+      },
+      {
+        itemName : "Apples",
+        quantity : 3,
+        price : "$2",
+        total : "$4"
+      }, {
+        itemName : "Bananas",
+        quantity : 3,
         price : "$2",
         total : "$4"
       }
     ]
   },
   {
-    name: "monday order",
+    name: "Thursdays order",
     amount: "$112",
-    date: "03/05/2022",
+    date: "06/05/2022",
     items: [
       {
-        itemName : "oranges",
+        itemName : "Oranges",
         quantity : 2,
+        price : "$2",
+        total : "$4"
+      },
+      {
+        itemName : "Apples",
+        quantity : 3,
+        price : "$2",
+        total : "$4"
+      }, {
+        itemName : "Bananas",
+        quantity : 3,
         price : "$2",
         total : "$4"
       }
     ]
   },
   {
-    name: "tuesdays order",
+    name: "Fridays order",
     amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "wednesdays order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "monday order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "tuesdays order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "wednesdays order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "monday order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "tuesdays order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "wednesdays order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "monday order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "tuesdays order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "wednesdays order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "monday order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "tuesdays order",
-    amount: "$112",
-    date: "03/05/2022",
-    items: [
-      {
-        itemName : "oranges",
-        quantity : 2,
-        price : "$2",
-        total : "$4"
-      }
-    ]
-  },
-  {
-    name: "wednesdays order",
-    amount: "$112",
-    date: "03/05/2022",
+    date: "07/05/2022",
     items: [
       {
         itemName : "oranges",

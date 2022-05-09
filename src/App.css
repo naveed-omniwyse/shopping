@@ -21,7 +21,7 @@ body{
 
 .bottom-part{
   margin-top: 70px;
-  height: calc(100vh - 80px);
+  /*height: calc(100vh - 80px);*/
   overflow: auto;
   padding: 0 30px ;
 }
@@ -35,7 +35,7 @@ body{
   border: 1px solid #ccc;
 }
 .table-fixed tbody {
-  height: calc(100vh - 420px);
+  /*height: calc(100vh - 420px);*/
   overflow-y: auto;
   width: 100%;
 }

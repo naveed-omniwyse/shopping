@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {Table} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,10 +9,49 @@ function App() {
     const [itemData, setItemData] = useState({});
     useEffect(() => {
         setItems(orders);
+        window.localStorage.setItem('data', JSON.stringify(orders));
         if (orders.length > 0) {
             setItemData(orders[0]);
         }
     }, []);
+    const makeEditable = (event) => {
+        var val = event.target.innerHTML;
+        var input = document.createElement("input");
+        input.value = val;
+        input.style.height = "20px";
+        input.onblur = function(ev){
+            ev.stopPropagation();
+            var val=this.value;
+            event.target.innerHTML=val;
+            const par = event.target.parentNode;
+            const obj = items;
+            const index = parseInt(par.childNodes[0].innerHTML) - 1;
+            const updatedData = {name: par.childNodes[2].innerHTML, date: par.childNodes[1].innerHTML , amount: par.childNodes[3].innerHTML}
+            obj[index] = {...obj[index], ...updatedData};
+            Object.assign(orders, obj);
+            setItems(obj);
+            setItemData(prev => {return {...prev, ...updatedData }});
+        }
+        event.target.innerHTML="";
+        event.target.appendChild(input);
+        input.focus();
+        input.onkeydown = function(e){
+            e.stopPropagation();
+            if(e.keyCode == 13){
+                input.blur();
+                // var val=e.target.value;
+                // event.target.innerHTML=val;
+                // const par = event.target.parentNode;
+                // const obj = items;
+                // obj[parseInt(par.childNodes[0].innerHTML) - 1].name = par.childNodes[2].innerHTML;
+                // obj[parseInt(par.childNodes[0].innerHTML) - 1].date = par.childNodes[1].innerHTML;
+                // obj[parseInt(par.childNodes[0].innerHTML) - 1].amount = par.childNodes[3].innerHTML;
+                // Object.assign(orders, obj);
+                // setItems(obj);
+                // setItemData(prev => obj[parseInt(par.childNodes[0].innerHTML) - 1]);
+            }
+        };
+    }
     return (
         <div className="App">
             <div class="fixed-top top-header"><h1>Summary</h1></div>
@@ -35,10 +73,10 @@ function App() {
                         items.map((item, index) => {
                             return (
                                 <tr onClick={() => setItemData(item)}>
-                                    <td class="col-md-2">{index + 1}</td>
-                                    <td class="col-md-3">{item.date}</td>
-                                    <td class="col-md-4">{item.name}</td>
-                                    <td class="col-md-3">{item.amount}</td>
+                                    <td class="col-md-2" onDoubleClick={makeEditable}>{index + 1}</td>
+                                    <td class="col-md-3" onDoubleClick={makeEditable}>{item.date}</td>
+                                    <td class="col-md-4" onDoubleClick={makeEditable}>{item.name}</td>
+                                    <td class="col-md-3" onDoubleClick={makeEditable}>{item.amount}</td>
                                 </tr>
                             )
                         })
@@ -86,8 +124,6 @@ function App() {
                                 </Table>
                             </div>
                         }
-
-
                     </div>
                 }
             </div>
